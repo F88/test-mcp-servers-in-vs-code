@@ -307,3 +307,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,node,intellij+all,macos,windows
+
+!.vscode/mcp.json
