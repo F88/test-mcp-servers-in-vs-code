@@ -8,7 +8,8 @@
     }
   ],
   "servers": {
-    "github": {
+    "github-for-workspace": {
+      "type": "stdio",
       "command": "docker",
       "args": [
         "run",
@@ -22,7 +23,8 @@
         "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github_token}"
       }
     },
-    "filesystem": {
+    "filesystem-for-workspace": {
+      "type": "stdio",
       "command": "npx",
       "args": [
         "-y",
@@ -35,15 +37,18 @@
         "FASTMCP_LOG_LEVEL": "DEBUG"
       }
     },
-    "playwright": {
-      "command": "npx",
-      "args": ["@playwright/mcp@latest", "--vision"],
-      "env": {
-        // "FASTMCP_LOG_LEVEL": "ERROR"
-        "FASTMCP_LOG_LEVEL": "DEBUG"
-      }
+    "fetch-for-workspace": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["mcp-server-fetch"]
     },
-    "awslabs.aws-documentation-mcp-server": {
+    "playwright-for-workspace": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    },
+    "awslabs.aws-documentation-mcp-server-for-workspace": {
+      "type": "stdio",
       "command": "uvx",
       "args": ["awslabs.aws-documentation-mcp-server@latest"],
       "env": {
